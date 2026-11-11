@@ -1,0 +1,21 @@
+# Dataset-specific optimization settings from the manuscript supplement.
+data:
+  name: toys
+  format: amazon
+  reviews: data/raw/toys/reviews_Toys_and_Games_5.json.gz
+  metadata: data/raw/toys/meta_Toys_and_Games.json.gz
+index:
+  unfreeze_epoch: 1000
+  conditional_dropout: 0.15
+  alignment:
+    temperature: 0.07
+    weight: 0.0012
+    start: 0
+    warmup: 100
+    view_dropout: 0.12
+    view_noise: 0.015
+model:
+  guidance:
+    bias: 0.7
+train:
+  lr: 0.001

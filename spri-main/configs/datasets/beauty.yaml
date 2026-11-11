@@ -1,0 +1,21 @@
+# Dataset-specific optimization settings from the manuscript supplement.
+data:
+  name: beauty
+  format: amazon
+  reviews: data/raw/beauty/reviews_Beauty_5.json.gz
+  metadata: data/raw/beauty/meta_Beauty.json.gz
+index:
+  unfreeze_epoch: 600
+  conditional_dropout: 0.1
+  alignment:
+    temperature: 0.07
+    weight: 0.0012
+    start: 0
+    warmup: 100
+    view_dropout: 0.1
+    view_noise: 0.01
+model:
+  guidance:
+    bias: 0.8
+train:
+  lr: 0.001

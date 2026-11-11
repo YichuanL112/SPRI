@@ -1,0 +1,21 @@
+# Dataset-specific optimization settings from the manuscript supplement.
+data:
+  name: yelp
+  format: yelp
+  reviews: data/raw/yelp/yelp_academic_dataset_review.json
+  metadata: data/raw/yelp/yelp_academic_dataset_business.json
+index:
+  unfreeze_epoch: 400
+  conditional_dropout: 0.1
+  alignment:
+    temperature: 0.08
+    weight: 0.001
+    start: 400
+    warmup: 400
+    view_dropout: 0.1
+    view_noise: 0.01
+model:
+  guidance:
+    bias: 0.8
+train:
+  lr: 0.003

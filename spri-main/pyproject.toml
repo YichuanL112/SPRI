@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spri-main"
+version = "0.1.0"
+description = "Shared-Prefix Refinement Indexing for generative recommendation"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.2", "numpy>=1.24", "PyYAML>=6", "transformers>=4.44,<5", "sentence-transformers>=3,<6"]
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+[project.scripts]
+spri-main = "spri.cli:main"
+[tool.setuptools.packages.find]
+include = ["spri", "spri.*"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
